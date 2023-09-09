@@ -1,0 +1,39 @@
+{
+  "name": "@ferhado/angular-toolkit",
+  "version": "1.0.0-alpha-1",
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
+  "author": "ferhado <support@ferhado.com>",
+  "description": "A comprehensive utility library designed to enhance Angular and Angular Material projects. Includes a rich set of functions, services, and components that simplify and accelerate development workflows.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferhado/angular-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ferhado/angular-toolkit/issues"
+  },
+  "homepage": "https://ferhado.com",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/cdk": "^16.2.2",
+    "@angular/material": "^16.2.2"
+  },
+  "peerDependenciesMeta": {
+    "@angular/cdk": {
+      "optional": true
+    },
+    "@angular/material": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

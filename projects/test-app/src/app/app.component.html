@@ -1,0 +1,45 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-3">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light mb-3">Test ferhado angular toolkit {{'2023-09-08' | date:'EEEE'}}</h1>
+      <h1 class="fw-light mb-3">Current Lang {{tr.currentLang}}</h1>
+
+      <div class="d-flex flex-column flex-md-row flex-wrap gap-2">
+        <button (click)="setLanguage('en')" mat-raised-button>English</button>
+        <button (click)="setLanguage('de')" mat-raised-button>German</button>
+
+        <button mat-raised-button color="primary" (click)="testHttp()">Global Spinner</button>
+        <button mat-raised-button color="primary" (click)="testHttp('product')" [disabled]="isLoadingCustom">
+          <span class="spinner-border spinner-border-sm" aria-hidden="true" *ngIf="isLoadingCustom"></span>
+          Custom Spinner
+        </button>
+        <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Start date">
+      <input matEndDate formControlName="end" placeholder="End date">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+
+    <mat-error>Invalid start date</mat-error>
+    <mat-error>Invalid end date</mat-error>
+  </mat-form-field>
+
+
+
+</section>
+
+<section class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <fat-products [products]="productsList"></fat-products>
+  </div>
+</section>
+
+<fat-loading-spinner [isLoading]="isLoading"></fat-loading-spinner>

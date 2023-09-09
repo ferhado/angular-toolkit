@@ -1,14 +1,13 @@
 {
-  "name": "ferhado-angular-toolkit",
-  "version": "1.0.0",
+  "name": "ferhado-angular-packages",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve test-app -o",
     "build": "ng build @ferhado/angular-toolkit && cd dist/ferhado/angular-toolkit && npm pack",
-    "git-push": "git add -A && git commit -m \"Automated commit\" && git push",
-    "publish": "npm run build && npm publish && npm run git-push"
+    "publish": "ng build @ferhado/angular-toolkit && cd dist/ferhado/angular-toolkit && npm pack && npm publish --access=public && git add -A && git commit -m \"Automated commit\" && git push"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^16.2.0",
     "@angular/cdk": "^16.2.2",

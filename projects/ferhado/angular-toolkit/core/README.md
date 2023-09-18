@@ -1,4 +1,4 @@
-# @fathado/angular-toolkit/core
+# @ferhado/angular-toolkit/core
 
 Enhance Angular Material with custom date formats, currency pipes, and user inactivity tracking.
 
@@ -13,7 +13,7 @@ npm install @ferhado/angular-toolkit
 ## Setup
 
 ```typescript
-import { FatLocaleModule } from "@fathado/angular-toolkit/core";
+import { FatLocaleModule } from "@ferhado/angular-toolkit/core";
 
 @NgModule({
   imports: [FatLocaleModule.init({ currency: "€", dateFormat: "dd.MM.yy" })],
@@ -30,7 +30,7 @@ Tracks user inactivity using Angular's native `ApplicationRef`. Emits a notifica
 #### Import & Usage
 
 ```typescript
-import { FatUserActivity } from "@fathado/angular-toolkit/core";
+import { FatUserActivity } from "@ferhado/angular-toolkit/core";
 
 constructor(private userActivity: FatUserActivity) {
   this.userActivity.timeoutNotifier(10).subscribe(() => console.log("timeout: 10 min"));
@@ -39,8 +39,8 @@ constructor(private userActivity: FatUserActivity) {
 
 ## Support
 
-- [Issues & Bugs](https://github.com/fathado/angular-toolkit/issues)
-- [Feature Requests](https://github.com/fathado/angular-toolkit/issues)
+- [Issues & Bugs](https://github.com/ferhado/angular-toolkit/issues)
+- [Feature Requests](https://github.com/ferhado/angular-toolkit/issues)
 
 ## License
 

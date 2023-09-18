@@ -13,7 +13,7 @@ import { FatDateAdapter } from './date-adapter';
 @NgModule()
 export class FatLocaleModule {
   public static init(config?: {
-    currency: string;
+    currency?: string;
     dateFormat?: any;
   }): ModuleWithProviders<any> {
     return {

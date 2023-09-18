@@ -1,11 +1,11 @@
-# @fathado/angular-toolkit/sidenav-swiper
+# @ferhado/angular-toolkit/sidenav-swiper
 
 A powerful Angular component that provides swipe gesture functionality for toggling a side navigation drawer. It's designed to be easy to use, highly customizable, and supports both left-to-right (LTR) and right-to-left (RTL) text directions.
 
 ### Installation
 
 ```bash
-npm install @fathado/angular-toolkit
+npm install @ferhado/angular-toolkit
 ```
 
 ### Usage
@@ -13,7 +13,7 @@ npm install @fathado/angular-toolkit
 First, import `FatSidenavSwiperModule` in your module:
 
 ```typescript
-import { FatSidenavSwiperModule } from "@fathado/angular-toolkit/sidenav-swiper";
+import { FatSidenavSwiperModule } from "@ferhado/angular-toolkit/sidenav-swiper";
 
 @NgModule({
   imports: [

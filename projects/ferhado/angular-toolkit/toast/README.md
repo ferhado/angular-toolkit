@@ -1,4 +1,4 @@
-# @fathado/angular-toolkit/toast
+# @ferhado/angular-toolkit/toast
 
 > **Important Note:** Before using `FatToastService`, please note:
 >
@@ -14,7 +14,7 @@ An Angular service for displaying toast notifications in Angular applications. T
 To install the package, run the following command:
 
 ```bash
-npm install @fathado/angular-toolkit
+npm install @ferhado/angular-toolkit
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ npm install @fathado/angular-toolkit
 First, import the `FatToastModule` into your Angular module:
 
 ```typescript
-import { FatToastModule } from "@fathado/angular-toolkit/toast";
+import { FatToastModule } from "@ferhado/angular-toolkit/toast";
 
 @NgModule({
   imports: [FatToastModule, MatSnackBarModule],
@@ -37,7 +37,7 @@ export class AppModule {}
 Inject the `FatToastService` into your component to use its methods:
 
 ```typescript
-import { FatToastService } from "@fathado/angular-toolkit/toast";
+import { FatToastService } from "@ferhado/angular-toolkit/toast";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 export class AppComponent {
@@ -62,7 +62,7 @@ export class AppComponent {
 The `FatToastService` also accepts HTML content for more advanced styling. You can use Bootstrap classes or your own custom styles.
 
 ```typescript
-import { FatToastService } from "@fathado/angular-toolkit/toast";
+import { FatToastService } from "@ferhado/angular-toolkit/toast";
 
 export class AppComponent {
   constructor(private toastService: FatToastService) {}

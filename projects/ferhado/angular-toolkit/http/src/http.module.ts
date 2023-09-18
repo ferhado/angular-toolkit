@@ -13,7 +13,7 @@ import { FatHttpLoadingInterceptor } from './http.loading.interceptor';
   ],
 })
 export class FatHttpModule {
-  static init(FatHttpConfig?: {
+  static forRoot(FatHttpConfig?: {
     apiEndpointUrl?: string;
   }): ModuleWithProviders<FatHttpModule> {
     return {

@@ -19,7 +19,7 @@ import { FatTranslatorModule } from "@ferhado/angular-toolkit/translator";
 
 @NgModule({
   imports: [
-    FatTranslatorModule.init({
+    FatTranslatorModule.forRoot({
       allowedLangs: ["en", "de", "fr"],
       defaultLang: "en",
     }),

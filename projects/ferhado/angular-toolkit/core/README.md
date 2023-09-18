@@ -16,7 +16,7 @@ npm install @ferhado/angular-toolkit
 import { FatLocaleModule } from "@ferhado/angular-toolkit/core";
 
 @NgModule({
-  imports: [FatLocaleModule.init({ currency: "€", dateFormat: "dd.MM.yy" })],
+  imports: [FatLocaleModule.forRoot({ currency: "€", dateFormat: "dd.MM.yy" })],
 })
 export class AppModule {}
 ```

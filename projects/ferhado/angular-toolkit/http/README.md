@@ -28,7 +28,7 @@ Import `FatHttpModule` and configure:
 import { FatHttpModule } from "@ferhado/angular-toolkit/http";
 
 @NgModule({
-  imports: [FatHttpModule.init({ apiEndpointUrl: "https://dummyjson.com/" })],
+  imports: [FatHttpModule.forRoot({ apiEndpointUrl: "https://dummyjson.com/" })],
 })
 export class AppModule {}
 ```

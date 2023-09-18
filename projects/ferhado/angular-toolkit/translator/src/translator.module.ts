@@ -6,7 +6,7 @@ import { FatTranslatorPipe } from './translator.pipe';
   exports: [FatTranslatorPipe],
 })
 export class FatTranslatorModule {
-  static init(configOptions?: {
+  static forRoot(configOptions?: {
     allowedLangs?: string[];
     defaultLang?: string;
     localeProvider?: Provider;

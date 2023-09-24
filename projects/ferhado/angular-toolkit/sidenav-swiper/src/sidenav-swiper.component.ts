@@ -58,8 +58,6 @@ export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    event.preventDefault();
-
     this.startX = event.touches[0].pageX;
     this.startY = event.touches[0].pageY;
     this.currentX = this.startX;
@@ -80,8 +78,6 @@ export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
     if (!(event instanceof TouchEvent) || !this.touchingSideNav) {
       return;
     }
-
-    event.preventDefault();
 
     const moveX = event.touches[0].pageX;
     const moveY = event.touches[0].pageY;

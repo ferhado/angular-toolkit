@@ -90,14 +90,14 @@ const options = generatePaginationOptions(1000); // Returns [25, 50, 100, 200, 3
 const customOptions = generatePaginationOptions(1000, [10, 20, 30]); // Returns [10, 20, 30, 1000]
 ```
 
-### Device Token
+### Device ID
 
-Generates or retrieves a device token and stores it in local storage.
+Generates or retrieves a device id and stores it in local storage.
 
 #### Usage
 
 ```typescript
-const token = getDeviceToken(); // Returns a 32-character device token
+const deviceId = deviceId(); // Returns a 32-character device id
 ```
 
 ### Unique ID

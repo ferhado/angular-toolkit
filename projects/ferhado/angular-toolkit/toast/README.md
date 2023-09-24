@@ -19,26 +19,12 @@ npm install @ferhado/angular-toolkit
 
 ## Usage
 
-### Import Module
-
-First, import the `FatToastModule` into your Angular module:
-
-```typescript
-import { FatToastModule } from "@ferhado/angular-toolkit/toast";
-
-@NgModule({
-  imports: [FatToastModule, MatSnackBarModule],
-})
-export class AppModule {}
-```
-
 ### Use in Components
 
 Inject the `FatToastService` into your component to use its methods:
 
 ```typescript
 import { FatToastService } from "@ferhado/angular-toolkit/toast";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 export class AppComponent {
   constructor(private toastService: FatToastService) {}

@@ -14,22 +14,22 @@ export function generatePaginationOptions(
   }
 }
 
-export function getDeviceToken() {
-  // Try to get the token from local storage
-  let token = localStorage.getItem('fat.x-device');
+export function deviceId() {
+  // Try to get the id from local storage
+  let id = localStorage.getItem('fat.x-device');
 
-  // If no token is found or the token length is not 32, generate a new one
-  if (!token || token.length !== 32) {
+  // If no id is found or the id length is not 32, generate a new one
+  if (!id || id.length !== 32) {
     let randomBytes = crypto.getRandomValues(new Uint8Array(16));
-    token = Array.from(randomBytes, (byte) =>
+    id = Array.from(randomBytes, (byte) =>
       byte.toString(16).padStart(2, '0')
     ).join('');
 
-    // Store the new token in local storage
-    localStorage.setItem('fat.x-device', token);
+    // Store the new id in local storage
+    localStorage.setItem('fat.x-device', id);
   }
 
-  return token;
+  return id;
 }
 
 export function uniqid(length: number = 22) {

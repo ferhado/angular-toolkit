@@ -3,7 +3,19 @@ import { EventEmitter, Inject, Injectable, Optional } from '@angular/core';
 const DEFAULT_LANG = 'en';
 const DEFAULT_DIR = 'ltr';
 const ALLOWED_LANGS = ['en'];
-const RTL_LANGS = new Set(['ar', 'fa', 'ur']);
+
+const RTL_LANGS = new Set([
+  'ar',
+  'fa',
+  'ur',
+  'he',
+  'ps',
+  'ku',
+  'sd',
+  'yi',
+  'ms',
+]);
+
 export const FAT_LANG_STORAGE_KEY = 'fat.x-lang';
 
 @Injectable({

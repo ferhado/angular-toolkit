@@ -7,7 +7,7 @@ A robust HTTP service for Angular, offering simplified HTTP methods, loading sta
 ## Installation
 
 ```bash
-npm install @ferhado/angular-toolkit/http
+npm install @ferhado/angular-toolkit
 ```
 
 ## Features
@@ -80,7 +80,13 @@ this.httpService.upload<T>("url", files).subscribe();
 Default:
 
 ```typescript
-this.httpService.loading.subscribe(({ request }) => (this.isLoading = request));
+this.httpService.loading.subscribe(({ isLoading }) => (this.isLoading = isLoading));
+```
+
+Upload:
+
+```typescript
+this.httpService.loading.subscribe(({ isUploading }) => (this.isLoading = isUploading));
 ```
 
 Custom:

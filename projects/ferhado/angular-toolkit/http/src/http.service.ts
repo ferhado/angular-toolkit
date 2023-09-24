@@ -15,9 +15,9 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, filter, map } from 'rxjs/operators';
 import { FatHttpLoadingService } from './http.loading.service';
 
-export const LOADING_TAG = new HttpContextToken<string>(() => 'request');
+export const LOADING_TAG = new HttpContextToken<string>(() => 'isLoading');
 
-interface FatHttpRequestOptions {
+export interface FatHttpRequestOptions {
   headers?: HttpHeaders;
   params?: HttpParams;
   body?: any;
@@ -72,7 +72,7 @@ export class FatHttpService {
     const finalUrl = reqOptions?.skipApiPrefix ? url : this.makeUrl(url);
     const context = new HttpContext().set(
       LOADING_TAG,
-      reqOptions?.loadingTag || 'request'
+      reqOptions?.loadingTag || 'isLoading'
     );
 
     const options = {
@@ -136,7 +136,7 @@ export class FatHttpService {
     reqOptions?: FatHttpRequestOptions
   ): Observable<T> {
     const finalReqOptions: FatHttpRequestOptions = {
-      loadingTag: 'upload',
+      loadingTag: 'isUploading',
       reportProgress: true,
       observe: 'events',
       ...reqOptions,

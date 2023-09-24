@@ -54,6 +54,10 @@ export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
   }
 
   onDrawerStart(event: TouchEvent) {
+    if (!event.touches) {
+      return;
+    }
+
     this.startX = event.touches[0].pageX;
     this.startY = event.touches[0].pageY;
     this.currentX = this.startX;

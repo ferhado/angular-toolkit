@@ -1,8 +1,21 @@
 {
   "name": "@ferhado/angular-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ferhado <support@ferhado.com>",
   "description": "A comprehensive utility library designed to enhance Angular and Angular Material projects. Includes a rich set of functions, services, and components that simplify and accelerate development workflows.",
+  "keywords": [
+    "angular",
+    "angular-toolkit",
+    "components",
+    "utilities",
+    "dialogs",
+    "http",
+    "translation",
+    "navigation",
+    "customization",
+    "rating",
+    "internationalization"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ferhado/angular-toolkit.git"

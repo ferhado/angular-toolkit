@@ -21,8 +21,8 @@ const DOCUMENT_DIRECTIONS: { [key: string]: { start: string; end: string } } = {
 export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
   @Input() direction: 'start' | 'end' = 'start';
   @Input() isOpened = false;
-  @Input() threshold = 50; // New input for threshold
-  @Input() swipeThreshold = 50; // New input for swipeThreshold
+  @Input() threshold = 30;
+  @Input() swipeThreshold = 50;
 
   @Output() open = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
@@ -54,9 +54,11 @@ export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
   }
 
   onDrawerStart(event: TouchEvent) {
-    if (!event.touches) {
+    if (!(event instanceof TouchEvent)) {
       return;
     }
+
+    event.preventDefault();
 
     this.startX = event.touches[0].pageX;
     this.startY = event.touches[0].pageY;
@@ -75,7 +77,11 @@ export class FatSidenavSwiperComponent implements AfterViewInit, OnDestroy {
   }
 
   onDrawerMove(event: TouchEvent) {
-    if (!this.touchingSideNav) return;
+    if (!(event instanceof TouchEvent) || !this.touchingSideNav) {
+      return;
+    }
+
+    event.preventDefault();
 
     const moveX = event.touches[0].pageX;
     const moveY = event.touches[0].pageY;

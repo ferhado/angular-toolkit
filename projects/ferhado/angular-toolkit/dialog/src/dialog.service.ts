@@ -6,8 +6,8 @@ import {
 } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 
-type FatDiCallback = (value: any) => void;
-type FatDiCallbackObj = { next?: FatDiCallback; fail?: FatDiCallback };
+export type FatDiCallback = (value: any) => void;
+export type FatDiCallbackObj = { next?: FatDiCallback; fail?: FatDiCallback };
 
 @Injectable({
   providedIn: 'root',

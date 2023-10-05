@@ -51,7 +51,9 @@ export class FatSwiperElementsTouchFixer implements OnDestroy {
     const deltaY = e.touches[0].clientY - this.initialY;
 
     if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      e.preventDefault();
+      if (e.cancelable) {
+        e.preventDefault();
+      }
     }
   }
 

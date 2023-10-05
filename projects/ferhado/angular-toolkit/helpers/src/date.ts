@@ -15,7 +15,7 @@ export const date = {
   },
 
   sqlFormat: (inputDate: Date | string | number, time = false) => {
-    return date.format(inputDate, time ? 'yyyy-mm-dd HH:mm:ss' : 'yyyy-mm-dd');
+    return date.format(inputDate, time ? 'yyyy-MM-dd HH:mm:ss' : 'yyyy-MM-dd');
   },
 
   dayName: (inputDate: Date | string | number, length: number = 0) => {

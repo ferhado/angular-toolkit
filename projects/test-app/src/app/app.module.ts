@@ -41,8 +41,8 @@ registerLocaleData(localeEn, localeEnExtra);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FatHttpModule.init({ apiEndpointUrl: 'https://dummyjson.com/' }),
-    FatTranslatorModule.init({
+    FatHttpModule.forRoot({ apiEndpointUrl: 'https://dummyjson.com/' }),
+    FatTranslatorModule.forRoot({
       allowedLangs: ['en', 'de'],
     }),
 
@@ -52,7 +52,7 @@ registerLocaleData(localeEn, localeEnExtra);
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule,
-    FatLocaleModule.init({
+    FatLocaleModule.forRoot({
       currency: '€',
       dateFormat: 'dd.MM.yy',
     }),

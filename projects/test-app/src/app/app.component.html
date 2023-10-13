@@ -7,6 +7,7 @@
       <div class="d-flex flex-column flex-md-row flex-wrap gap-2">
         <button (click)="setLanguage('en')" mat-raised-button>English</button>
         <button (click)="setLanguage('de')" mat-raised-button>German</button>
+        <button (click)="editUser()" mat-raised-button>EditUser</button>
 
         <button mat-raised-button color="primary" (click)="testHttp()">Global Spinner</button>
         <button mat-raised-button color="primary" (click)="testHttp('product')" [disabled]="isLoadingCustom">
@@ -16,6 +17,11 @@
         <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
       </div>
     </div>
+  </div>
+
+  <div>
+    Username: {{userData.name}}
+    Age: {{userData.age}}
   </div>
 
   <mat-form-field>

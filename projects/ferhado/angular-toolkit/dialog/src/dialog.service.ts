@@ -6,8 +6,11 @@ import {
 } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 
-export type FatDiCallback = (value: any) => void;
-export type FatDiCallbackObj = { next?: FatDiCallback; fail?: FatDiCallback };
+export type FatDialogCallback = (value: any) => void;
+export type FatDialogCallbackConfig = {
+  next?: FatDialogCallback;
+  fail?: FatDialogCallback;
+};
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +29,7 @@ export class FatDialogService {
     component: any,
     customOptions?: MatDialogConfig
   ): {
-    then: (callback: FatDiCallback | FatDiCallbackObj) => void;
+    then: (callback: FatDialogCallback | FatDialogCallbackConfig) => void;
     ref: MatDialogRef<any>;
   } {
     const dialogOptions: MatDialogConfig = {
@@ -65,7 +68,7 @@ export class FatDialogService {
 
     return {
       ref: dialogRef,
-      then: (callback: FatDiCallback | FatDiCallbackObj) => {
+      then: (callback: FatDialogCallback | FatDialogCallbackConfig) => {
         if (typeof callback === 'function') {
           onSuccess.subscribe(callback);
         } else {

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FatConfirmBoxService } from '@ferhado/angular-toolkit/confirm-box';
+import { FatDialogService } from '@ferhado/angular-toolkit/dialog';
 import { FatHttpService } from '@ferhado/angular-toolkit/http';
 import { FatToastService } from '@ferhado/angular-toolkit/toast';
 import { FatTranslatorService } from '@ferhado/angular-toolkit/translator';
+import { DialogTestComponent } from './components/dialog-test.component';
 import { TRANSLATION_OBJECT } from './lang';
 
 @Component({
@@ -13,6 +15,10 @@ import { TRANSLATION_OBJECT } from './lang';
 export class AppComponent implements OnInit {
   isLoading: boolean = false;
   isLoadingCustom: boolean = false;
+  userData: any = {
+    name: 'John',
+    age: 32,
+  };
 
   productsList: any = [];
 
@@ -20,7 +26,8 @@ export class AppComponent implements OnInit {
     private httpService: FatHttpService,
     private fcb: FatConfirmBoxService,
     public tr: FatTranslatorService,
-    private toastService: FatToastService
+    private toastService: FatToastService,
+    private dialog: FatDialogService
   ) {
     this.tr.setTranslations(TRANSLATION_OBJECT[this.tr.currentLang]);
   }
@@ -66,6 +73,14 @@ export class AppComponent implements OnInit {
       .then({
         next: (r) => console.log('next: ' + r),
         fail: (r) => console.log('fail: ' + r),
+      });
+  }
+
+  editUser() {
+    this.dialog
+      .open(DialogTestComponent, { data: { ...this.userData } })
+      .then((data) => {
+        Object.assign(this.userData, data);
       });
   }
 

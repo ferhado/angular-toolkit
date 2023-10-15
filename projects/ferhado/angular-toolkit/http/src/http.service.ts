@@ -79,19 +79,28 @@ export class FatHttpService {
       reqOptions?.loadingTag || 'isLoading'
     );
 
-    const options = {
+    if (
+      !headers.has('Content-Type') ||
+      headers.get('Content-Type') === 'application/x-www-form-urlencoded'
+    ) {
+      params = this.makeParam(params);
+    }
+
+    const options: any = {
       headers,
       context,
-      params: method === 'GET' ? this.makeParam(params) : undefined,
-      body: method !== 'GET' ? this.makeParam(params) : undefined,
-      ...reqOptions,
     };
 
-    return this.http.request<T>(
-      method,
-      finalUrl,
-      options as any
-    ) as Observable<T>;
+    if (method === 'GET') {
+      options.params = params;
+    } else {
+      options.body = params;
+    }
+
+    return this.http.request<T>(method, finalUrl, {
+      ...options,
+      ...reqOptions,
+    } as any) as Observable<T>;
   }
 
   get<T>(

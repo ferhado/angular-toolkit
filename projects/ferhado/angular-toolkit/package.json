@@ -1,6 +1,6 @@
 {
   "name": "@ferhado/angular-toolkit",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "ferhado <support@ferhado.com>",
   "description": "A comprehensive utility library designed to enhance Angular and Angular Material projects. Includes a rich set of functions, services, and components that simplify and accelerate development workflows.",
   "keywords": [

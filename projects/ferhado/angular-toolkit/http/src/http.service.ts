@@ -69,6 +69,10 @@ export class FatHttpService {
     params?: any,
     reqOptions?: FatHttpRequestOptions
   ): Observable<T> {
+    let headers =
+      reqOptions?.headers ||
+      new HttpHeaders({ 'Content-Type': 'application/json' });
+
     const finalUrl = reqOptions?.skipApiPrefix ? url : this.makeUrl(url);
     const context = new HttpContext().set(
       LOADING_TAG,
@@ -76,6 +80,7 @@ export class FatHttpService {
     );
 
     const options = {
+      headers,
       context,
       params: method === 'GET' ? this.makeParam(params) : undefined,
       body: method !== 'GET' ? this.makeParam(params) : undefined,
